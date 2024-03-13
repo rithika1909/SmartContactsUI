@@ -10,7 +10,7 @@ export class ChatbotServieService {
 
   public text=""
   tempWords: any;
-  private apiUrl = 'https://dabf-125-22-161-174.ngrok-free.app/api/prompt_route';
+  private apiUrl = 'https://ad99-171-79-60-132.ngrok-free.app/api/prompt_route';
  
   constructor(private http: HttpClient) { }
 

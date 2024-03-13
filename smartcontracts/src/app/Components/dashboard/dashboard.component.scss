@@ -81,6 +81,24 @@ img{
   flex: 2;
   padding: 20px;
 }
+.close-pdf {
+  position: absolute; /* Position the close button */
+  top: 80px; /* Adjust as needed */
+  right: 3px; /* Adjust as needed */
+  background-color: transparent; /* Transparent background for the button */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.close-pdf .material-icons {
+  font-size: 24px; /* Set font size of the icon */
+  color: #333; /* Set color of the icon */
+}
+
+.close-pdf:hover .material-icons {
+  color: #fff; /* Set color of the icon on hover */
+}
  
  
 .chatbot-container {

@@ -60,7 +60,9 @@ export class DashboardComponent  {
     console.log("Displaying PDF content:", pdf.content);
     this.pdfContent = pdf.content; 
   }
- 
+  closePdfViewer() {
+    this.pdfContent = null; // Clear the pdfContent to close the PDF viewer
+}
   openChat() {
     this.isOpen = true;
   }
@@ -85,6 +87,7 @@ export class DashboardComponent  {
 startRecording() {
   this.service.start();
   this.isRecording = true;
+ 
 }
  
 stopRecording() {
@@ -94,6 +97,8 @@ stopRecording() {
   if (this.recognizedText !== '') {
     this.sendMessage(this.recognizedText);
   }
+  this.service.text = '';
+  
 }
  
 toggleSpeechRecognition() {
@@ -112,7 +117,8 @@ sendMessage(text: string) {
   this.ChatbotService.sendMessage(this.speech).subscribe((response: any) => {
     console.log('Chatbot API Response:', response);
     // Add the chatbot's response to the messages array
-    this.messages.push(response.Answer);
+    const botResponse = { text: response.Answer, from: 'bot' };
+    this.messages.push(botResponse);
   }, (error: any) => {
     console.error('Chatbot API Error:', error);
   });
