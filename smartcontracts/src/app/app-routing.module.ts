@@ -4,7 +4,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LoginComponent } from './Components/login/login.component';
 
 const routes: Routes = [
-  {path:'smartcontract', component:LoginComponent},
+  {path:'', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent}
 ];
 
