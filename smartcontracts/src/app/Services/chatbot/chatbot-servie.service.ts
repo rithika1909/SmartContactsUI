@@ -4,11 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
+ 
 export class ChatbotServieService {
 
   public text=""
   tempWords: any;
-  private apiUrl = 'https://6755-125-22-161-174.ngrok-free.app/api/prompt_route';
+  private apiUrl = 'https://dabf-125-22-161-174.ngrok-free.app/api/prompt_route';
  
   constructor(private http: HttpClient) { }
 
