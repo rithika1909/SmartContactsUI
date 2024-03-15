@@ -6,9 +6,9 @@ interface Folder {
   name: string;
   pdfList: { name: string, content: SafeResourceUrl }[];
   isOpen: boolean; // Add isOpen propert
-  
- 
-  
+
+
+
 
 }
 
@@ -46,24 +46,7 @@ export class DashboardComponent {
     this.service.init()
   }
 
-  // handlePdfInput(event: Event) {
-  //   const files = (event.target as HTMLInputElement).files;
-  //   if (files) {
-  //     for (let i = 0; i < files.length; i++) {
-  //       const file = files[i];
-  //       if (file.type === "application/pdf") {
-  //         const reader = new FileReader();
-  //         reader.onload = () => {
-  //           const pdfContent: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(reader.result as string);
-  //           this.pdfList.push({ name: file.name, content: pdfContent });
-  //         };
-  //         reader.readAsDataURL(file);
-  //       } else {
-  //         console.error("Please select a PDF file.");
-  //       }
-  //     }
-  //   }
-  // }
+
   handlePdfInput(event: Event, folder: Folder) {
     const files = (event.target as HTMLInputElement).files;
     if (files) {
@@ -86,21 +69,14 @@ export class DashboardComponent {
   toggleFolder(folder: Folder) {
     folder.isOpen = !folder.isOpen;
   }
-    openPdfFileManagerForFolder(folder: Folder) {
-      const pdfInput = document.createElement('input');
-      pdfInput.type = 'file';
-      pdfInput.multiple = true;
-      pdfInput.accept = 'application/pdf';
-      pdfInput.addEventListener('change', (event) => this.handlePdfInput(event, folder));
-      pdfInput.click();
-    }
-
-  // openPdfFileManager() {
-  //   const pdfInput = document.getElementById('pdfInput');
-  //   if (pdfInput) {
-  //     pdfInput.click();
-  //   }
-  // }
+  openPdfFileManagerForFolder(folder: Folder) {
+    const pdfInput = document.createElement('input');
+    pdfInput.type = 'file';
+    pdfInput.multiple = true;
+    pdfInput.accept = 'application/pdf';
+    pdfInput.addEventListener('change', (event) => this.handlePdfInput(event, folder));
+    pdfInput.click();
+  }
 
   showPdfContent(pdf: { name: string, content: SafeResourceUrl }) {
     console.log("Displaying PDF content:", pdf.content);
@@ -199,22 +175,7 @@ export class DashboardComponent {
     // Add chatbot response to messages array
     this.messages.push({ text: chatbotResponse, from: 'bot' });
   }
-  // createFolder() {
-  //   // Check if the folder name is not empty
-  //   if (this.newFolderName.trim() !== '') {
-  //     // Check if the folder name already exists
-  //     if (!this.folders.find(folder => folder.name === this.newFolderName)) {
-  //       // Add the new folder to the list
-  //       this.folders.push({ name: this.newFolderName });
-  //       // Clear the input field after creating the folder
-  //       this.newFolderName = '';
-  //     } else {
-  //       alert('Folder with this name already exists!');
-  //     }
-  //   } else {
-  //     alert('Please enter a folder name!');
-  //   }
-  // }
+
   openFolderDialog() {
     this.showFolderDialog = true;
   }
@@ -225,7 +186,7 @@ export class DashboardComponent {
   }
   createFolder() {
     if (this.newFolderName.trim() !== '') {
-      const newFolder: Folder = { name: this.newFolderName, pdfList: [],isOpen: false  };
+      const newFolder: Folder = { name: this.newFolderName, pdfList: [], isOpen: false };
       this.folders.push(newFolder);
       this.closeFolderDialog();
     }
