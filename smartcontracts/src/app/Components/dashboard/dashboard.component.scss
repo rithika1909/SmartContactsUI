@@ -60,11 +60,16 @@ img{
   border: 1px solid lightgrey;
   
 }
-.upload-icon{
+.folder-name{
+  display: flex;
+  // align-items: center;
+}
+.upload-icon, .add-icon{
   display: flex;
   justify-content:space-between;
+  margin-left: auto;
 }
-.upload-icon button{
+.upload-icon button, .add-icon button{
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -74,8 +79,27 @@ img{
 .uploaded-pdfs button{
   background-color: transparent;
   border: none;
+  font-size: 14px;
+  margin-left: 3%;
+}
+
+
+.foldercon{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
   font-size: 18px;
-  padding: 4% 0;
+  align-items: center;
+ 
+}
+
+.create-folder button{
+  background-color: transparent;
+  border: none; /* You can adjust border styles as needed */
+  color: #000; /* Set text color */
+  padding: 5px 10px; /* Adjust padding as needed */
+  cursor: pointer;
+  
 }
 .pdf-viewer {
   flex: 2;
@@ -188,7 +212,7 @@ img{
   right: 20px;
   width: 50px;
   height: 50px;
-  background-color:  #28104E;;
+  background-color:  #28104E;
   color: white;
   border: none;
   border-radius: 50%;
@@ -276,4 +300,92 @@ color: black;
 
 .bot-message .message-bubble {
 background-color: #e0e0e0; /* Adjust as needed */
+}
+.folder-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.modal-buttons button {
+  margin-right: 10px;
+}
+
+.folder-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.folder-dialog h2 {
+  // margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.folder-dialog input[type="text"] {
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.folder-dialog button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #28104E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.folder-dialog button:hover {
+  background-color: #9d7dcf;
+}
+
+.folder-dialog button.cancel {
+  background-color: #28104E;
+}
+
+.folder-dialog button.cancel:hover {
+  background-color: #9976d4;
+}
+.toggle{
+  display: flex ;
+  width:100%;
+}
+.dialog-btn{
+  // display: flex;
+  // justify-content: space-between;
+}
+.folders-container{
+  font-size: 20px;
+}
+.folder-name span{
+  cursor: pointer;
 }

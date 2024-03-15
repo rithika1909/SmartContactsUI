@@ -1,21 +1,19 @@
 <div class="main-container">
-
-    <div class="login-container">
-       <h2>Login</h2>
-       <div class="form-group">
-         <label for="email">Enter your email</label>
-         <input type="email" id="email" [(ngModel)]="username" name="Enter your email" class="form-control" placeholder="username" required>
-       </div>
-       <div class="form-group">
-         <label for="password">Enter your password</label>
-         <input type="password" id="password" [(ngModel)]="password" name="Enter your password" class="form-control"  placeholder="password" required>
-       </div>
-      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-   <button (click)="login()" class="loginbut">Login</button>
-     </div>
-     
-         
-   </div>
-   
-   
-   
+ 
+  <img src="..\assets\Desktop Background.png" alt="Logo">
+  <div class="login-container">
+    <h2>Smart Contracts</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="username" name="Enter your email" class="form-control"
+        placeholder="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="Enter your password" class="form-control"
+        placeholder="password" required>
+    </div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <button (click)="login()" class="loginbut">Login</button>
+  </div>
+</div>
