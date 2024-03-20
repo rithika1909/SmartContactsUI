@@ -12,17 +12,35 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
   email: string = '';
+  userType: string = 'user'; 
  
   constructor(private authService: AuthService,private router: Router) {}
  
  
+  // login(): void {
+  //   if (this.authService.login(this.username, this.password)) {
+  //     // Navigate to dashboard or desired route on successful login
+  //     this.router.navigate(['/homepage']);
+  //     console.log('Login successful');
+  //   } else {
+  //     this.errorMessage = 'Invalid credentials';
+  //   }
+  // }
   login(): void {
-    if (this.authService.login(this.username, this.password)) {
-      // Navigate to dashboard or desired route on successful login
-      this.router.navigate(['/dashboard']);
-      console.log('Login successful');
-    } else {
-      this.errorMessage = 'Invalid credentials';
+    if (this.userType === 'user') {
+      if (this.authService.login(this.username, this.password)) {
+        this.router.navigate(['/homepage']);
+        console.log('User login successful');
+      } else {
+        this.errorMessage = 'Invalid user credentials';
+      }
+    } else if (this.userType === 'admin') {
+      if (this.authService.loginAsAdmin(this.username, this.password)) {
+        this.router.navigate(['/homepage']);
+        console.log('Admin login successful');
+      } else {
+        this.errorMessage = 'Invalid admin credentials';
+      }
     }
   }
 

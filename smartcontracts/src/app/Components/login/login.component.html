@@ -13,7 +13,15 @@
       <input type="password" id="password" [(ngModel)]="password" name="Enter your password" class="form-control"
         placeholder="password" required>
     </div>
+    <div class="form-group">
+      <label for="userType"></label>
+      <select id="userType" [(ngModel)]="userType" class="form-control">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
     <button (click)="login()" class="loginbut">Login</button>
+  
   </div>
 </div>
