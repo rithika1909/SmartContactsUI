@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { SpeechRecognitionService } from '../../Services/speechregonition/speech-recognition.service';
 import { ChatbotServieService } from '../../Services/chatbot/chatbot-servie.service';
+import { AuthService } from 'src/app/Services/Authentication/auth.service';
+import { Router } from '@angular/router';
+import { MatDrawer } from '@angular/material/sidenav';
 interface Folder {
   name: string;
   pdfList: { name: string, content: SafeResourceUrl }[];
@@ -23,7 +26,7 @@ export class DashboardComponent {
   isOpen: boolean = false;
   message: string = '';
   messages: { text: string, from: string }[] = [];
-
+  drawer:any;
   recognizedText: string = '';
   speech!: string;
   newFolderName: string = '';
@@ -41,8 +44,9 @@ export class DashboardComponent {
 
 
   pdfList: { name: string, content: SafeResourceUrl }[] = []; // Array to store uploaded PDFs
+  isPinned: boolean = true;
 
-  constructor(private sanitizer: DomSanitizer, public service: SpeechRecognitionService, private ChatbotService: ChatbotServieService) {
+  constructor(private sanitizer: DomSanitizer, public service: SpeechRecognitionService, private ChatbotService: ChatbotServieService,private authService: AuthService,private router: Router) {
     this.service.init()
   }
 
@@ -190,6 +194,19 @@ export class DashboardComponent {
       this.folders.push(newFolder);
       this.closeFolderDialog();
     }
+  }
+  logout(): void {
+    if (confirm("Are you sure you want to logout?")) {
+      this.authService.logout();
+      this.router.navigate(['/login']); // Redirect to login page
+    }
+  }
+  toggleNav() {
+    this.isOpen = !this.isOpen;
+  }
+  
+  togglePin() {
+    this.isPinned = !this.isPinned;
   }
 
 

@@ -1,4 +1,4 @@
-*,.main,body{
+*,.main{
   margin: 0;
   padding: 0;
 }
@@ -7,15 +7,15 @@
   flex-direction: column;
   height: 100vh; /* Adjust as needed */
 }
+
  
-.header {
+.header{
+  background-color: #28104E;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px ;
-  border-bottom: 1px solid lightgrey;
-  background-color: #28104E;
-  
+
 }
 .logo {
   display: flex;
@@ -29,12 +29,11 @@ img{
     height: 40px;
 }
  
-.logo {
-  font-size: 24px;
+.logo{
+  font-size: 15px;
   font-weight: bold;
   color: white;
 }
- 
 .title {
   font-size: 20px;
   color:white;
@@ -48,16 +47,80 @@ img{
   cursor: pointer;
 }
  
-.body {
-  display: flex;
-  flex: 1;
+// .body {
+//   display: flex;
+//   flex: 1;
+// }
+.side-nav{
+  height: 90%;
+  width: 255px;
+  position: absolute;
+  z-index: 9999;
+  background-color:white;
 }
- 
+.tabs button{
+font-size: 20px;
+}
+
+
+
+
+
+.mat-sidenav-content {
+  padding: 16px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+  
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block; /* Ensure the image is displayed as a block element */
+  margin: 0 auto;
+}
+p {
+  text-align: center;
+}
+
+.tabs button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.tabs button:hover {
+  background-color: #f0f0f0;
+}
+.content-container {
+  // flex: 1; /* Takes up remaining space */
+  display: flex;
+  // flex-direction: row; /* Stack items vertically */
+  width: 100%;
+
+}
 .uploaded {
   flex: 1;
-  padding: 20px;
-  margin: 1%;
+  padding: 20px 30px;
+  margin:1%;
+  
+
   border: 1px solid lightgrey;
+  height: 80vh;
+
   
 }
 .folder-name{
@@ -104,14 +167,15 @@ img{
 .pdf-viewer {
   flex: 2;
   padding: 20px;
+ margin-left: auto;
 }
 .close-pdf {
-  position: absolute; /* Position the close button */
-  top: 80px; /* Adjust as needed */
-  right: 3px; /* Adjust as needed */
-  background-color: transparent; /* Transparent background for the button */
-  border: none; /* Remove border */
-  padding: 0; /* Remove padding */
+  position: absolute; 
+  top: 5px; 
+  right: 1px; 
+  background-color: transparent; 
+  border: none; 
+  padding: 0; 
   cursor: pointer; /* Set cursor to pointer on hover */
 }
 
@@ -123,10 +187,9 @@ img{
 .close-pdf:hover .material-icons {
   color: #fff; /* Set color of the icon on hover */
 }
- 
- 
+  
 .chatbot-container {
-  position: fixed;
+  position: absolute;
   bottom: 10px;
   right: 20px;
   width: 350px;
@@ -136,6 +199,7 @@ img{
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: none;
+  z-index: 9999;
 }
  
 .chatbot-container.open {
@@ -218,6 +282,7 @@ img{
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+  z-index: 10000;
 }
  
 .close-btn{
@@ -388,4 +453,14 @@ background-color: #e0e0e0; /* Adjust as needed */
 }
 .folder-name span{
   cursor: pointer;
+}
+.sidenav{
+  min-width: 15rem;
+
+}
+.drawer-content{
+  display: flex;
+  width: 100%;
+  // background-color: blue;
+  // padding: 10rem;
 }

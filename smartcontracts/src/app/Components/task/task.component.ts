@@ -12,6 +12,8 @@ export class TaskComponent {
   showToggle: boolean = true;
   showSideNav: boolean = false;
   isOpen: boolean = false;
+  isPinned: boolean = true;
+  isDrawerOpen: boolean = false;
 
   constructor(private authService: AuthService,private router: Router) {
     this.isAdmin = this.authService.getUserType() === 'admin';
@@ -29,8 +31,15 @@ export class TaskComponent {
   //   this.showSideNav = !this.showSideNav;
   //   this.showToggle = false;
   // }
+  
   toggleNav() {
     this.isOpen = !this.isOpen;
+  }
+  togglePin() {
+    this.isPinned = !this.isPinned;
+  }
+  toggleDrawer() {
+    this.isDrawerOpen = !this.isDrawerOpen;
   }
 
 }

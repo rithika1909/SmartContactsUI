@@ -12,6 +12,8 @@ export class HomepageComponent {
   showToggle: boolean = true;
   showSideNav: boolean = false;
   isOpen: boolean = false;
+  isPinned: boolean = true;
+  
 
   constructor(private authService: AuthService,private router: Router) {
     this.isAdmin = this.authService.getUserType() === 'admin';
@@ -25,13 +27,13 @@ export class HomepageComponent {
       this.router.navigate(['/login']); // Redirect to login page
     }
   }
-  // toggleSideNav(): void {
-  //   this.showSideNav = !this.showSideNav;
-  //   this.showToggle = false;
-  // }
+ 
   toggleNav() {
     this.isOpen = !this.isOpen;
   }
-
+  togglePin() {
+    this.isPinned = !this.isPinned;
+  }
+  
 }
 
