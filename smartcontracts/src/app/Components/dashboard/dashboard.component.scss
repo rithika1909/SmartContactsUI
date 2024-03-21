@@ -110,6 +110,7 @@ p {
   display: flex;
   // flex-direction: row; /* Stack items vertically */
   width: 100%;
+  background-color: #dadada;
 
 }
 .uploaded {
@@ -118,7 +119,7 @@ p {
   margin:1%;
   
 
-  border: 1px solid lightgrey;
+  border: 1px solid rgb(26, 25, 25);
   height: 80vh;
 
   
