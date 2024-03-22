@@ -1,13 +1,15 @@
-*,.main{
+*, .main {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Add box-sizing to include padding and border in element's total width and height */
 }
+
 .main {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Adjust as needed */
+  overflow-y: hidden; /* Hide vertical scrollbar */
 }
-
  
 .header{
   background-color: #28104E;
@@ -228,6 +230,7 @@ p {
 }
  
 .chatbot-footer {
+  height: 5%;
   padding: 1%;
   border-top: 1px solid #ccc;
   display: flex;
@@ -266,8 +269,8 @@ p {
  
 .chatbot-footer button span.material-symbols-outlined {
   font-family: 'Material Symbols Outlined', sans-serif; /* Set font family */
-  font-size: 18px; /* Set font size */
-  vertical-align: middle; /* Align icon vertically */
+  font-size: 18px; 
+  vertical-align: middle; 
 }
  
 .chatbot-icon {

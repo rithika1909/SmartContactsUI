@@ -17,7 +17,7 @@
                
                 <div class="drawer-button" (click)="togglePin()">
                     <button type="button" mat-button (click)="drawer.toggle()">
-                        <mat-icon>{{ isPinned ? 'chevron_left' : 'menu' }}</mat-icon>
+                        <mat-icon>{{ isPinned ? 'menu' : 'menu' }}</mat-icon>
                     </button>
 
                 </div>
@@ -35,7 +35,7 @@
             <div class="drawer-content">
                 <div *ngIf="isPinned" class="sidenav-content" (click)="togglePin()">
                     <button type="button" mat-button (click)="drawer.toggle()">
-                        <mat-icon>{{ isPinned ? 'chevron_left' : 'menu' }}</mat-icon>
+                        <mat-icon>{{ isPinned ? 'menu' : 'menu' }}</mat-icon>
                     </button>
                 </div>
                 <div class="content-container">
