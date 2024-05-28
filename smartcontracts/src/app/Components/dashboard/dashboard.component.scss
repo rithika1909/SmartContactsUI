@@ -1,6 +1,6 @@
 *, .main {
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   box-sizing: border-box; /* Add box-sizing to include padding and border in element's total width and height */
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh; /* Adjust as needed */
-  overflow-y: hidden; /* Hide vertical scrollbar */
+  // overflow-y: hidden; /* Hide vertical scrollbar */
 }
  
 .header{
@@ -18,6 +18,10 @@
   justify-content: space-between;
   align-items: center;
 
+}
+title {
+  font-size: 20px;
+  color: white;
 }
 .logo {
   display: flex;
@@ -49,10 +53,6 @@ img{
   cursor: pointer;
 }
  
-// .body {
-//   display: flex;
-//   flex: 1;
-// }
 .side-nav{
   height: 90%;
   width: 255px;
@@ -108,31 +108,29 @@ p {
   background-color: #f0f0f0;
 }
 .content-container {
-  // flex: 1; /* Takes up remaining space */
   display: flex;
-  // flex-direction: row; /* Stack items vertically */
   width: 100%;
+  height: 90vh;
+  background-color: #dadada;
 
 }
 .uploaded {
   flex: 1;
   padding: 20px 30px;
   margin:1%;
-  
-
-  border: 1px solid lightgrey;
-  height: 80vh;
+  border: 1px solid rgb(26,25,25);
+  height: 87vh;
 
   
 }
 .folder-name{
   display: flex;
-  // align-items: center;
+  
 }
 .upload-icon, .add-icon{
   display: flex;
   justify-content:space-between;
-  margin-left: auto;
+  
 }
 .upload-icon button, .add-icon button{
   border: none;
@@ -230,7 +228,7 @@ p {
 }
  
 .chatbot-footer {
-  height: 5%;
+  
   padding: 1%;
   border-top: 1px solid #ccc;
   display: flex;
